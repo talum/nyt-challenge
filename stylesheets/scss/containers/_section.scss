@@ -1,30 +1,29 @@
 .section {
+  display: inline-block;
   padding: $padding--m 0;
   border-bottom: 1px solid gray;
 } 
-
-.SpanABTop {
-  display: none;
-}
 
 .aColumn {
   display: flex;
   flex-wrap: wrap;
 
   .collection.LedeStory395 {
-    flex: 3;
+    flex: 1;
   }
 
-  .StandardThumb {
+  .StandardThumb:nth-child(4) {
+    .article~.article {
+      border-left: 1px solid gray;
+    }
   }
 }
 
 .bColumn {
+  .StandardThumb:nth-child(6), .StandardThumb:nth-child(8), .StandardThumb:nth-child(9),
+  .StandardThumb:nth-child(10) {
+    display: none;
+  }
 }
 
-.cColumn {
-}
 
-.LiveMobileResults {
-
-}

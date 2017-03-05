@@ -6,7 +6,7 @@ function Page(data) {
 Page.prototype.render = function() {
   var pageHTMLStart = `<div class="site-layout">`
   var pageHTMLEnd = `</div>`
-  var detailHTML = `<div class="heading heading--level-1">${this.details.title}</div><div>${this.details.description}</div>`
+  var detailHTML = `<div class="heading heading--level-1">${this.details.title}</div><div class="heading heading--level-2">${this.details.description}</div>`
   var contentHTML = this.contents.map(function(sectionContent) {
     var section = new Section(sectionContent)
     return section.render()

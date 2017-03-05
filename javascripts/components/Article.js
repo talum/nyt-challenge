@@ -39,11 +39,10 @@ Article.prototype.renderImage = function() {
     // available
     var imageType = imageLookup[this.type]
     var image = this.images[0].types.find(function(image) { return image.type.match(imageType) }) 
-    console.log(image + " " + this.headline)
+
     var imageMarkup = `
       <img src="` + baseURL + image.content + `" /> 
-      <div class="credit">${this.images.credit}</div>
-      <caption>${this.images[0].caption}</caption>
+      <div class="heading heading--credit">${this.images[0].credit}</div>
     `
     return imageMarkup
   } else {
@@ -52,17 +51,23 @@ Article.prototype.renderImage = function() {
 
 }
 
+Article.prototype.shouldShow = function() {
+  return (this.headline != "Only rank in summary collections" && this.headline != "undefined" && !!this.headline)
+}
+
 Article.prototype.render = function() {
-  return (`<article class="article">
-      <div class="">${ this.renderImage() }</div>
-      <div class="">${ this.shouldShowDesk() }</div>
-      <h3 class="heading">${ this.shouldMartianize ? this.martianize(this.headline) : this.headline}</h3>
-      <div class="">${ this.shouldMartianize ? this.martianize(this.byline) : this.byline }</div>
-      <div class="">${ this.shouldMartianize ? this.martianize(this.dateline) : this.dateline }</div>
-      <div class="">${ this.shouldMartianize ? this.martianize(this.summary) : this.summary}</div>
-      <div class="">${ this.shouldMartianize ? this.martianize(this.kicker) : this.kicker }</div>
-    </article>`
-  )
+  if (this.shouldShow()) {
+    return (`<article class="article">
+        <div class="">${ this.renderImage() }</div>
+        <div class="heading heading--desk">${ this.shouldShowDesk() }</div>
+        <h3 class="heading">${ this.shouldMartianize ? this.martianize(this.headline) : this.headline}</h3>
+        <div class="heading heading--byline">${ this.shouldMartianize ? this.martianize(this.byline) : this.byline }</div>
+        <div class="">${ this.shouldMartianize ? this.martianize(this.dateline) : this.dateline }</div>
+        <div class="">${ this.shouldMartianize ? this.martianize(this.summary) : this.summary}</div>
+        <div class="">${ this.shouldMartianize ? this.martianize(this.kicker) : this.kicker }</div>
+      </article>`
+    )
+  }
 }
 
 Article.prototype.martianize = function(phrase) {
