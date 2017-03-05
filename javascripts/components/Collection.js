@@ -1,5 +1,6 @@
-function Collection(collection) {
+function Collection(collection, state) {
   this.collection = collection
+  this.state = state
 }
 
 Collection.prototype.shouldShow = function() {
@@ -12,7 +13,7 @@ Collection.prototype.render = function() {
     var collectionWrapperEnd = "</div>"
     var self = this
     var articlesHTML = this.collection.assets.map(function(articleInfo) {
-      var article = new Article(articleInfo, self.collection.renderStyle)
+      var article = new Article(articleInfo, self.collection.renderStyle, self.state)
       return article.render()
     })
     return collectionWrapperStart + articlesHTML.join("") + collectionWrapperEnd
