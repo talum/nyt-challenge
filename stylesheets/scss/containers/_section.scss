@@ -1,21 +1,27 @@
 .section {
   display: inline-block;
   padding: $padding--m 0;
-  border-bottom: 1px solid gray;
-} 
+  border-bottom: 1px solid $gray;
+  
+  &.aColumn {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 
 .aColumn {
-  display: flex;
-  flex-wrap: wrap;
-
-  .collection.LedeStory395 {
-    flex: 1;
-  }
-
   .StandardThumb:nth-child(4) {
-    .article~.article {
-      border-left: 1px solid gray;
+    border-top: 1px solid $gray;
+    .article:nth-child(2) .heading--level-3 {
+      @extend .heading--serif;
+      font-size: $font-size-xl;
     }
+    .article~.article {
+      border-left: 1px solid $gray;
+    }
+  }
+  .StandardThumb:nth-child(5) {
+    border-top: 1px solid $gray;
   }
 }
 
@@ -24,6 +30,72 @@
   .StandardThumb:nth-child(10) {
     display: none;
   }
+} 
+
+.collection {
+  padding: $padding--m 0;
+
+  &.LedeStory395 {
+    float: left;
+    width: 25%;
+    .heading--level-3 { font-size: $font-size-l; @extend .heading--serif; }
+    .article {
+      border-right: 1px solid $gray;
+    }
+  }
+
+  &.StandardThumb {    
+    float: left;
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-between; 
+    
+  }
+
+  &.BlogModule {
+    float: left;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+
+    .article { border-left: 1px solid $gray; }
+    .article~.article .article__inner{ border-top: 1px solid $gray; }
+    .heading--level-3 { font-size: $font-size-m; @extend .heading--serif; }
+    .image-container { float: right; }
+    p { font-size: $font-size-sm; }
+  }
+
+  &.WideThumb {
+    display: block;
+    clear: both;
+    .article { width: 33%; float: left; }
+  }
 }
 
+.collection:nth-child(4) {
+  display: flex;
+  width: 100%;
+  .article {
+    flex: 1;
+  }
+}
+.collection:nth-child(5) {
+  width:100%;
+  display: flex;
+  .article {
+    width: 25%;
+  }
+}
 
+.HeadlineOnly {
+  display: none;
+}
+
+@media(max-width: $breakpoint-large) {
+  .color {
+
+  }
+}

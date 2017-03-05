@@ -1,3 +1,7 @@
 .article {
-  padding: $padding--m;
+  padding: 0 $padding--m 0;
+}
+
+.article__inner {
+  padding: $padding--m 0;
 }

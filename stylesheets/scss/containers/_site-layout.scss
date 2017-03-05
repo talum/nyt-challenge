@@ -1,3 +1,15 @@
 .site-layout {
   padding: $site-padding;
 }
+
+@media(max-width: $breakpoint-large) {
+  .site-layout {
+    padding: $site-padding-s;
+  }
+}
+
+@media(max-width: $breakpoint-medium) {
+  .site-layout {
+    padding: $site-padding-xs;
+  }
+}

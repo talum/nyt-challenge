@@ -11,12 +11,12 @@ function Article(article, renderStyle, state) {
   this.shouldMartianize = state.shouldMartianize
 }
 
-Article.prototype.shouldShowProperty = function(string) {
+Article.prototype.shouldShowProperty = function(property, string) {
   if (!!string) {
     if (this.shouldMartianize) {
-      return this.martianize(string)
+      return '<div class="heading heading--' + property + '">' + this.martianize(string) + '</div>'
     } else {
-      return string
+      return '<div class="heading heading--' + property + '">' + string + '</div>'
     }
   } else {
     return ""
@@ -57,13 +57,14 @@ Article.prototype.shouldShow = function() {
 
 Article.prototype.render = function() {
   if (this.shouldShow()) {
-    return (`<article class="article">
-        <div class="">${ this.renderImage() }</div>
-        <div class="heading heading--desk">${ this.shouldShowProperty(this.desk) }</div>
-        <h3 class="heading">${ this.shouldMartianize ? this.martianize(this.headline) : this.headline}</h3>
+    return (`<article class="article"><div class="article__inner">
+        <div class="image-container">${ this.renderImage() }</div>
+        ${ this.shouldShowProperty('desk', this.desk) }
+        <h3 class="heading heading--level-3">${ this.shouldMartianize ? this.martianize(this.headline) : this.headline}</h3>
         <div class="heading heading--byline">${ this.shouldMartianize ? this.martianize(this.byline) : this.byline }</div>
-        <div class="">${ this.shouldMartianize ? this.martianize(this.summary) : this.summary}</div>
-        <div class="">${ this.shouldShowProperty(this.kicker)}</div>
+        <p>${ this.shouldMartianize ? this.martianize(this.summary) : this.summary}</p>
+        ${ this.shouldShowProperty('kicker', this.kicker) }
+      </div>
       </article>`
     )
   }

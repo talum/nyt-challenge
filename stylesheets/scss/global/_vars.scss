@@ -1,5 +1,8 @@
 $site-padding: 96px; 
+$site-padding-s: 64px; 
+$site-padding-xs: 32px;
 
+$padding--xs: 4px;
 $padding--s: 8px;
 $padding--m: 16px;
 $padding--l: 32px;
@@ -7,3 +10,7 @@ $padding--l: 32px;
 $breakpoint-large: 960px;
 $breakpoint-medium: 768px;
 $breakpoint-small: 320px;
+
+//colors
+
+$gray: #dbdbdb;

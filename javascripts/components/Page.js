@@ -7,7 +7,9 @@ function Page(data, state) {
 Page.prototype.render = function(state) {
   var pageHTMLStart = `<div class="site-layout">`
   var pageHTMLEnd = `</div>`
-  var detailHTML = `<div class="heading heading--level-1">${this.details.title}</div><div class="heading heading--level-2">${this.details.description}</div><button onclick="NYTD.toggleLanguage()">Toggle Language</button>`
+  var detailHTML = `<div class="heading heading--level-1">${this.details.title}</div>
+    <div class="heading heading--level-2">${this.details.description}</div>
+    <button class="button button--color-black util--margin-lm" onclick="NYTD.toggleLanguage()">Toggle Language</button>`
   var self = this
   var contentHTML = this.contents.map(function(sectionContent) {
     var section = new Section(sectionContent, self.state)

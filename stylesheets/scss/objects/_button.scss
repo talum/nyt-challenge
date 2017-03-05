@@ -1,0 +1,9 @@
+.button {
+  padding: $padding--s $padding--m;
+}
+
+.button--color-black {
+  @extend .heading;
+  color: white;
+  background-color: black;
+}
