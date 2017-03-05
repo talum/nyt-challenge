@@ -1,3 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', 'Times New Roman'; }
 
+.heading {
+  font-family: 'Helvetica', 'Arial'; }
+
+.heading--level-1 {
+  /* for section header */
+  font-size: 48px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-bottom: 4px solid black; }
+
+.heading--level-2 {
+  /* for ATF headlines */ }
+
+p {
+  font-size: 16px; }
+
+.site-layout {
+  padding: 96px; }
+
+.section {
+  padding: 16px 0;
+  border-bottom: 1px solid gray; }
+
+.SpanABTop {
+  display: none; }
+
+.aColumn {
+  display: flex;
+  flex-wrap: wrap; }
+  .aColumn .collection.LedeStory395 {
+    flex: 3; }
+
+.collection {
+  display: flex;
+  padding: 16px 0; }
+  .collection.LedeStory395 {
+    flex: 2; }
+    .collection.LedeStory395 .article {
+      border-right: 1px solid gray; }
+  .collection.StandardThumb {
+    flex: 1;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+  .collection.BlogModule {
+    justify-content: space-between; }
+    .collection.BlogModule .article ~ .article {
+      border-left: 1px solid gray; }
+
+.article {
+  padding: 16px; }
 
 /*# sourceMappingURL=application.css.map */

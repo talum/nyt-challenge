@@ -1,0 +1,42 @@
+$font-size-xl: 48px;
+$font-size-l:  24px;
+$font-size-m:  16px;
+$font-size-s:  12px;
+$font-size-xs: 8px;
+
+.heading {
+  font-family: 'Helvetica', 'Arial';
+}
+
+.heading--level-1 {
+  /* for section header */
+  font-size: $font-size-xl;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-bottom: 4px solid black;
+}
+
+.heading--level-2 {
+ /* for ATF headlines */
+}
+
+.heading--level-3 {
+
+}
+
+.heading--level-4 {
+
+}
+
+.heading--level-5 {
+
+}
+
+.heading--level-6 {
+
+}
+
+p {
+  font-size: $font-size-m;
+}
+

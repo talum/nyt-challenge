@@ -4,10 +4,12 @@ function Page(data) {
 }
 
 Page.prototype.render = function() {
-  var detailHTML = `<div>${this.details.title}</div><div>${this.details.description}</div>`
+  var pageHTMLStart = `<div class="site-layout">`
+  var pageHTMLEnd = `</div>`
+  var detailHTML = `<div class="heading heading--level-1">${this.details.title}</div><div>${this.details.description}</div>`
   var contentHTML = this.contents.map(function(sectionContent) {
     var section = new Section(sectionContent)
     return section.render()
   })
-  return detailHTML + contentHTML.join("")
+  return pageHTMLStart + detailHTML + contentHTML.join("") + pageHTMLEnd
 }

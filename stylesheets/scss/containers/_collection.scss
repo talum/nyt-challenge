@@ -1,0 +1,30 @@
+.collection {
+  display: flex;
+  padding: $padding--m 0;
+
+  &.LedeStory395 {
+    flex: 2;
+
+    .article {
+      border-right: 1px solid gray;
+    }
+  }
+
+  &.StandardThumb {    
+    flex: 1;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-between; 
+    
+  }
+
+  &.BlogModule {
+    justify-content: space-between; 
+
+    .article~.article { border-left: 1px solid gray; }
+  }
+}
+
+.HeadlineOnly {
+
+}
