@@ -12,7 +12,7 @@ img {
 .heading--sans-serif, .heading, .button--color-black {
   font-family: 'Helvetica', 'Arial'; }
 
-.heading--serif, .aColumn .LedeStory395 .heading--level-3, .aColumn .BlogModule .heading--level-3, .aColumn .collection:nth-child(4) .article:nth-child(2) .heading--level-3 {
+.heading--serif, .aColumn .LedeStory395 .heading--level-3, .aColumn .BlogModule .heading--level-3, .aColumn .collection:nth-child(4) .article:nth-child(2) .heading--level-3, .aColumn .collection:nth-child(5) .heading--level-3, .bColumn .collection:nth-child(3) .heading--level-3 {
   font-family: "Georgia", "Times New Roman"; }
 
 .heading--level-1 {
@@ -128,6 +128,9 @@ p {
   border-top: 1px solid #dbdbdb;
   display: flex;
   flex-direction: column; }
+  .aColumn .collection:nth-child(5) .heading--level-3 {
+    font-size: 24px;
+    font-weight: 500; }
   .aColumn .collection:nth-child(5) .article {
     width: 66.66%; }
   .aColumn .collection:nth-child(5) .article .image-container {
@@ -172,6 +175,8 @@ p {
   width: 66.66%;
   display: inline-block;
   float: left; }
+  .bColumn .collection:nth-child(3) .heading--level-3 {
+    font-weight: 500; }
   .bColumn .collection:nth-child(3) .article {
     width: 33%;
     float: left; }
@@ -209,23 +214,22 @@ p {
     float: left;
     width: 100%; }
     .aColumn .LedeStory395 .article {
-      border-right: 0px solid #dbdbdb; }
-  .aColumn .collection {
-    width: 100%; }
+      border-right: 0px;
+      border-bottom: 1px solid #dbdbdb; }
   .aColumn .BlogModule {
     width: 100%; }
     .aColumn .BlogModule .article {
-      border-left: 0px solid #dbdbdb; }
-    .aColumn .BlogModule .article ~ .article .article__inner {
-      border-top: 1px solid #dbdbdb; }
+      border-left: 0px solid #dbdbdb;
+      border-bottom: 1px solid #dbdbdb; }
     .aColumn .BlogModule .image-container {
       float: right; }
     .aColumn .BlogModule p {
-      font-size: 14px; }
+      font-size: 16px; }
   .aColumn .collection:nth-child(2) {
-    width: 100%; }
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb; }
   .aColumn .collection:nth-child(4) {
-    border-top: 1px solid #dbdbdb; }
+    border-top: 0px solid #dbdbdb; }
     .aColumn .collection:nth-child(4) .article ~ .article {
       border-left: 0px solid #dbdbdb; }
   .aColumn .collection:nth-child(5) .article {
@@ -273,7 +277,11 @@ p {
       border-left: 0px solid #dbdbdb; }
   .bColumn .collection:nth-child(4) {
     width: 100%;
-    border-top: 1px solid #dbdbdb; }
+    border-top: 1px solid #dbdbdb;
+    display: block; }
+    .bColumn .collection:nth-child(4) .article {
+      display: block;
+      width: 100%; }
   .bColumn .collection:nth-child(5) {
     width: 100%;
     clear: both;
@@ -283,6 +291,28 @@ p {
       display: inline-block; }
   .bColumn .collection:nth-child(7) {
     clear: both;
+    border-top: 1px solid #dbdbdb; } }
+@media (max-width: 768px) {
+  .aColumn .collection:nth-child(5) .article .image-container, .aColumn .collection:nth-child(7) .article .image-container {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    float: none; }
+
+  .bColumn .collection:nth-child(1) .article .image-container {
+    padding: 0;
+    width: 100%;
+    float: none; } }
+@media (min-width: 640px) and (max-width: 768px) {
+  .collection:nth-child(4) {
+    display: block; }
+    .collection:nth-child(4) .article {
+      display: block;
+      width: 100%; }
+    .collection:nth-child(4) .article ~ .article .article__inner {
+      border-top: 0px solid #dbdbdb; } }
+@media (min-width: 320px) and (max-width: 640px -1) {
+  .collection:nth-child(4) .article ~ .article .article__inner {
     border-top: 1px solid #dbdbdb; } }
 .article {
   padding: 0 16px 0; }
