@@ -86,14 +86,34 @@ p {
     display: flex;
     flex-wrap: wrap; }
 
+.aColumn .StandardThumb:nth-child(2) {
+  float: left;
+  width: 25%; }
 .aColumn .StandardThumb:nth-child(4) {
-  border-top: 1px solid #dbdbdb; }
+  border-top: 1px solid #dbdbdb;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+  .aColumn .StandardThumb:nth-child(4) .article {
+    flex: 1; }
   .aColumn .StandardThumb:nth-child(4) .article:nth-child(2) .heading--level-3 {
     font-size: 32px; }
   .aColumn .StandardThumb:nth-child(4) .article ~ .article {
     border-left: 1px solid #dbdbdb; }
-.aColumn .StandardThumb:nth-child(5) {
-  border-top: 1px solid #dbdbdb; }
+.aColumn .StandardThumb:nth-child(5), .aColumn .StandardThumb:nth-child(7) {
+  border-top: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: column; }
+  .aColumn .StandardThumb:nth-child(5) .article, .aColumn .StandardThumb:nth-child(7) .article {
+    width: 66.66%; }
+  .aColumn .StandardThumb:nth-child(5) .article .image-container, .aColumn .StandardThumb:nth-child(7) .article .image-container {
+    padding-top: 16px;
+    padding-left: 16px;
+    width: 30%;
+    float: right; }
+  .aColumn .StandardThumb:nth-child(5) .article ~ .article, .aColumn .StandardThumb:nth-child(7) .article ~ .article {
+    border-top: 1px solid #dbdbdb; }
 
 .bColumn .StandardThumb:nth-child(6), .bColumn .StandardThumb:nth-child(8), .bColumn .StandardThumb:nth-child(9),
 .bColumn .StandardThumb:nth-child(10) {
@@ -108,13 +128,6 @@ p {
       font-size: 24px; }
     .collection.LedeStory395 .article {
       border-right: 1px solid #dbdbdb; }
-  .collection.StandardThumb {
-    float: left;
-    width: 25%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: row wrap;
-    justify-content: space-between; }
   .collection.BlogModule {
     float: left;
     width: 50%;
@@ -137,18 +150,6 @@ p {
     .collection.WideThumb .article {
       width: 33%;
       float: left; }
-
-.collection:nth-child(4) {
-  display: flex;
-  width: 100%; }
-  .collection:nth-child(4) .article {
-    flex: 1; }
-
-.collection:nth-child(5) {
-  width: 100%;
-  display: flex; }
-  .collection:nth-child(5) .article {
-    width: 25%; }
 
 .HeadlineOnly {
   display: none; }
