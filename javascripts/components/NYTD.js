@@ -24,7 +24,6 @@ NYTD.render = function(template) {
   document.getElementById("root").innerHTML = template
 }
 
-
 NYTD.prototype.martianize = function(phrase) {
   if (phrase === undefined) {
     return "undefined"
@@ -33,7 +32,7 @@ NYTD.prototype.martianize = function(phrase) {
     // ASSUMPTION: Words with apostrophes and hyphens are a single word
     // ASSUMPTION: Initialisms are not a single word
     // ASSUMPTION: Numbers are not words
-    var splitPhrase = phrase.match(/[\w-']+|[^\w]+/g)
+    var splitPhrase = phrase.trim().match(/[\w-']+|[^\w]+/g)
     if (!!splitPhrase) {
         var martianizedPhrase = splitPhrase.map(function(word) {
           if (isNaN(word) && word.length > 3) {

@@ -6,6 +6,7 @@ function Section(section, state) {
 Section.prototype = Object.create(NYTD.prototype)
 
 Section.prototype.shouldShow = function() {
+  // Assuming that I can selectively hide this content as well
   return (this.section.name != "SpanABTop" && this.section.name !="cColumn" && this.section.name != "LiveMobileResults")
 }
 
