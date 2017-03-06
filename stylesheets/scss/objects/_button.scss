@@ -1,9 +1,17 @@
 .button {
-  padding: $padding--s $padding--m;
+  @extend .heading;
+  padding: $padding--s $padding--l;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  -o-transition: .3s;
+  -ms-transition: .3s;
+  -mos-transition: .3s;
+  -webkit-transition: .3s;
 }
 
 .button--color-black {
-  @extend .heading;
   color: white;
   background-color: black;
+  &:hover { background-color: $blue; }
 }

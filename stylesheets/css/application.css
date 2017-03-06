@@ -5,11 +5,20 @@
   box-sizing: border-box;
   font-family: 'Georgia', 'Times New Roman'; }
 
+a {
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  color: inherit; }
+
 img {
   max-width: 100%;
   max-height: 100%; }
 
-.heading--sans-serif, .heading, .button--color-black {
+a:hover {
+  text-decoration: underline; }
+
+.heading--sans-serif, .heading, .button {
   font-family: 'Helvetica', 'Arial'; }
 
 .heading--serif, .aColumn .LedeStory395 .heading--level-3, .aColumn .BlogModule .heading--level-3, .aColumn .collection:nth-child(4) .article:nth-child(2) .heading--level-3, .aColumn .collection:nth-child(5) .heading--level-3, .bColumn .collection:nth-child(3) .heading--level-3 {
@@ -321,10 +330,19 @@ p {
   padding: 16px 0; }
 
 .button {
-  padding: 8px 16px; }
+  padding: 8px 32px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  -o-transition: .3s;
+  -ms-transition: .3s;
+  -mos-transition: .3s;
+  -webkit-transition: .3s; }
 
 .button--color-black {
   color: white;
   background-color: black; }
+  .button--color-black:hover {
+    background-color: #2d5b86; }
 
 /*# sourceMappingURL=application.css.map */

@@ -6,6 +6,8 @@ $font-size-sm: 14px;
 $font-size-s:  12px;
 $font-size-xs: 8px;
 
+a:hover { text-decoration: underline; }
+
 .heading--sans-serif { font-family: 'Helvetica', 'Arial'; }
 .heading--serif { font-family: 'Georgia', 'Times New Roman' }
 

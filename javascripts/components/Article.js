@@ -1,5 +1,6 @@
 function Article(article, renderStyle, state) {
   this.byline = article.byline
+  this.url = article.url
   this.dateline = article.dateline
   this.desk = article.desk
   this.headline = article.headline
@@ -60,7 +61,7 @@ Article.prototype.render = function() {
     return (`<article class="article"><div class="article__inner">
         <div class="image-container">${ this.renderImage() }</div>
         ${ this.shouldShowProperty('desk', this.desk) }
-        <h3 class="heading heading--level-3">${ this.shouldMartianize ? this.martianize(this.headline) : this.headline}</h3>
+        <h3 class="heading heading--level-3"><a href=${"'" + this.url + "'"}}>${ this.shouldMartianize ? this.martianize(this.headline) : this.headline}</a></h3>
         <div class="heading heading--byline">${ this.shouldMartianize ? this.martianize(this.byline) : this.byline }</div>
         <p>${ this.shouldMartianize ? this.martianize(this.summary) : this.summary}</p>
         ${ this.shouldShowProperty('kicker', this.kicker) }
