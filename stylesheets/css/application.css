@@ -12,7 +12,7 @@ img {
 .heading--sans-serif, .heading, .button--color-black {
   font-family: 'Helvetica', 'Arial'; }
 
-.heading--serif, .aColumn .StandardThumb:nth-child(4) .article:nth-child(2) .heading--level-3, .collection.LedeStory395 .heading--level-3, .collection.BlogModule .heading--level-3 {
+.heading--serif, .aColumn .LedeStory395 .heading--level-3, .aColumn .BlogModule .heading--level-3, .aColumn .collection:nth-child(4) .article:nth-child(2) .heading--level-3 {
   font-family: "Georgia", "Times New Roman"; }
 
 .heading--level-1 {
@@ -86,74 +86,204 @@ p {
     display: flex;
     flex-wrap: wrap; }
 
-.aColumn .StandardThumb:nth-child(2) {
+.aColumn .LedeStory395 {
   float: left;
   width: 25%; }
-.aColumn .StandardThumb:nth-child(4) {
+  .aColumn .LedeStory395 .heading--level-3 {
+    font-size: 24px; }
+  .aColumn .LedeStory395 .article {
+    border-right: 1px solid #dbdbdb; }
+.aColumn .BlogModule {
+  float: left;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .aColumn .BlogModule .article {
+    border-left: 1px solid #dbdbdb; }
+  .aColumn .BlogModule .article ~ .article .article__inner {
+    border-top: 1px solid #dbdbdb; }
+  .aColumn .BlogModule .heading--level-3 {
+    font-size: 16px; }
+  .aColumn .BlogModule .image-container {
+    float: right; }
+  .aColumn .BlogModule p {
+    font-size: 14px; }
+.aColumn .collection:nth-child(2) {
+  float: left;
+  width: 25%; }
+.aColumn .collection:nth-child(4) {
   border-top: 1px solid #dbdbdb;
   display: flex;
   flex-wrap: wrap;
   flex-flow: row wrap;
   justify-content: space-between; }
-  .aColumn .StandardThumb:nth-child(4) .article {
+  .aColumn .collection:nth-child(4) .article {
     flex: 1; }
-  .aColumn .StandardThumb:nth-child(4) .article:nth-child(2) .heading--level-3 {
+  .aColumn .collection:nth-child(4) .article:nth-child(2) .heading--level-3 {
     font-size: 32px; }
-  .aColumn .StandardThumb:nth-child(4) .article ~ .article {
+  .aColumn .collection:nth-child(4) .article ~ .article {
     border-left: 1px solid #dbdbdb; }
-.aColumn .StandardThumb:nth-child(5), .aColumn .StandardThumb:nth-child(7) {
+.aColumn .collection:nth-child(5) {
   border-top: 1px solid #dbdbdb;
   display: flex;
   flex-direction: column; }
-  .aColumn .StandardThumb:nth-child(5) .article, .aColumn .StandardThumb:nth-child(7) .article {
+  .aColumn .collection:nth-child(5) .article {
     width: 66.66%; }
-  .aColumn .StandardThumb:nth-child(5) .article .image-container, .aColumn .StandardThumb:nth-child(7) .article .image-container {
+  .aColumn .collection:nth-child(5) .article .image-container {
+    padding-top: 16px;
+    padding-left: 16px;
+    max-width: 30%;
+    float: right; }
+  .aColumn .collection:nth-child(5) .article ~ .article {
+    border-top: 1px solid #dbdbdb; }
+.aColumn .collection:nth-child(7) {
+  border-top: 4px solid black; }
+  .aColumn .collection:nth-child(7) .article {
+    width: 100%; }
+  .aColumn .collection:nth-child(7) .article .image-container {
     padding-top: 16px;
     padding-left: 16px;
     width: 30%;
     float: right; }
-  .aColumn .StandardThumb:nth-child(5) .article ~ .article, .aColumn .StandardThumb:nth-child(7) .article ~ .article {
+  .aColumn .collection:nth-child(7) .article ~ .article {
     border-top: 1px solid #dbdbdb; }
 
-.bColumn .StandardThumb:nth-child(6), .bColumn .StandardThumb:nth-child(8), .bColumn .StandardThumb:nth-child(9),
-.bColumn .StandardThumb:nth-child(10) {
+.bColumn .collection:nth-child(6), .bColumn .collection:nth-child(8), .bColumn .collection:nth-child(9),
+.bColumn .collection:nth-child(10) {
   display: none; }
+.bColumn .collection:nth-child(1) {
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid #dbdbdb; }
+  .bColumn .collection:nth-child(1) .article {
+    width: 100%; }
+  .bColumn .collection:nth-child(1) .article .image-container {
+    padding: 16px 16px 16px 0;
+    width: 30%;
+    float: left; }
+.bColumn .collection:nth-child(2) {
+  display: inline-block;
+  width: 33.33%;
+  float: left; }
+  .bColumn .collection:nth-child(2) .article ~ .article .article__inner {
+    border-top: 1px solid #dbdbdb; }
+.bColumn .collection:nth-child(3) {
+  width: 66.66%;
+  display: inline-block;
+  float: left; }
+  .bColumn .collection:nth-child(3) .article {
+    width: 33%;
+    float: left; }
+  .bColumn .collection:nth-child(3) .article ~ .article {
+    border-left: 1px solid #dbdbdb; }
+.bColumn .collection:nth-child(4) {
+  width: 66.66%;
+  border-top: 1px solid #dbdbdb;
+  float: left; }
+.bColumn .collection:nth-child(5) {
+  width: 100%;
+  clear: both;
+  border-top: 1px solid #dbdbdb; }
+  .bColumn .collection:nth-child(5) .article {
+    width: 25%;
+    display: inline-block;
+    float: left; }
+.bColumn .collection:nth-child(7) {
+  clear: both;
+  border-top: 1px solid #dbdbdb; }
 
 .collection {
   padding: 16px 0; }
-  .collection.LedeStory395 {
-    float: left;
-    width: 25%; }
-    .collection.LedeStory395 .heading--level-3 {
-      font-size: 24px; }
-    .collection.LedeStory395 .article {
-      border-right: 1px solid #dbdbdb; }
-  .collection.BlogModule {
-    float: left;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    .collection.BlogModule .article {
-      border-left: 1px solid #dbdbdb; }
-    .collection.BlogModule .article ~ .article .article__inner {
-      border-top: 1px solid #dbdbdb; }
-    .collection.BlogModule .heading--level-3 {
-      font-size: 16px; }
-    .collection.BlogModule .image-container {
-      float: right; }
-    .collection.BlogModule p {
-      font-size: 14px; }
-  .collection.WideThumb {
-    display: block;
-    clear: both; }
-    .collection.WideThumb .article {
-      width: 33%;
-      float: left; }
 
 .HeadlineOnly {
   display: none; }
 
+@media (max-width: 960px) {
+  .section {
+    display: inline-block;
+    padding: 16px 0;
+    border: 0; }
+
+  .aColumn .LedeStory395 {
+    float: left;
+    width: 100%; }
+    .aColumn .LedeStory395 .article {
+      border-right: 0px solid #dbdbdb; }
+  .aColumn .collection {
+    width: 100%; }
+  .aColumn .BlogModule {
+    width: 100%; }
+    .aColumn .BlogModule .article {
+      border-left: 0px solid #dbdbdb; }
+    .aColumn .BlogModule .article ~ .article .article__inner {
+      border-top: 1px solid #dbdbdb; }
+    .aColumn .BlogModule .image-container {
+      float: right; }
+    .aColumn .BlogModule p {
+      font-size: 14px; }
+  .aColumn .collection:nth-child(2) {
+    width: 100%; }
+  .aColumn .collection:nth-child(4) {
+    border-top: 1px solid #dbdbdb; }
+    .aColumn .collection:nth-child(4) .article ~ .article {
+      border-left: 0px solid #dbdbdb; }
+  .aColumn .collection:nth-child(5) .article {
+    width: 100%; }
+  .aColumn .collection:nth-child(5) .article .image-container {
+    padding-top: 16px;
+    padding-left: 16px;
+    max-width: 30%;
+    float: right; }
+  .aColumn .collection:nth-child(5) .article ~ .article {
+    border-top: 1px solid #dbdbdb; }
+  .aColumn .collection:nth-child(7) {
+    border-top: 4px solid black; }
+    .aColumn .collection:nth-child(7) .article {
+      width: 100%; }
+    .aColumn .collection:nth-child(7) .article .image-container {
+      padding-top: 16px;
+      padding-left: 16px;
+      width: 30%;
+      float: right; }
+    .aColumn .collection:nth-child(7) .article ~ .article {
+      border-top: 1px solid #dbdbdb; }
+
+  .bColumn .collection:nth-child(1) {
+    width: 100%;
+    display: inline-block;
+    border-bottom: 1px solid #dbdbdb; }
+    .bColumn .collection:nth-child(1) .article {
+      width: 100%; }
+    .bColumn .collection:nth-child(1) .article .image-container {
+      padding: 16px 16px 16px 0;
+      width: 30%;
+      float: left; }
+  .bColumn .collection:nth-child(2) {
+    width: 100%; }
+    .bColumn .collection:nth-child(2) .article ~ .article .article__inner {
+      border-top: 1px solid #dbdbdb; }
+  .bColumn .collection:nth-child(3) {
+    width: 100%;
+    display: inline-block;
+    float: left; }
+    .bColumn .collection:nth-child(3) .article {
+      width: 100%; }
+    .bColumn .collection:nth-child(3) .article ~ .article {
+      border-left: 0px solid #dbdbdb; }
+  .bColumn .collection:nth-child(4) {
+    width: 100%;
+    border-top: 1px solid #dbdbdb; }
+  .bColumn .collection:nth-child(5) {
+    width: 100%;
+    clear: both;
+    border-top: 1px solid #dbdbdb; }
+    .bColumn .collection:nth-child(5) .article {
+      width: 100%;
+      display: inline-block; }
+  .bColumn .collection:nth-child(7) {
+    clear: both;
+    border-top: 1px solid #dbdbdb; } }
 .article {
   padding: 0 16px 0; }
 
