@@ -12,6 +12,8 @@ function Article(article, renderStyle, state) {
   this.shouldMartianize = state.shouldMartianize
 }
 
+Article.prototype = Object.create(NYTD.prototype)
+
 Article.prototype.shouldShowProperty = function(property, string) {
   if (!!string) {
     if (this.shouldMartianize) {
@@ -43,7 +45,7 @@ Article.prototype.renderImage = function() {
 
     var imageMarkup = `
       <img src="` + baseURL + image.content + `" /> 
-      <div class="heading heading--credit">${this.images[0].credit}</div>
+      <div class="heading heading--credit">${this.shouldMartianize ? this.martianize(this.images[0].credit) : this.images[0].credit}</div>
     `
     return imageMarkup
   } else {
@@ -71,31 +73,3 @@ Article.prototype.render = function() {
   }
 }
 
-Article.prototype.martianize = function(phrase) {
-  if (phrase === undefined) {
-    return "undefined"
-  } else {
-    // Regex from http://stackoverflow.com/questions/24718348/how-to-parse-string-into-words-and-punctuation-marks-using-javascript
-    // ASSUMPTION: Words with apostrophes and hyphens are a single word
-    // ASSUMPTION: Initialisms are not a single word
-    // ASSUMPTION: Numbers are not words
-    // TODO: move to different location & prototype link so other components can access
-    var splitPhrase = phrase.match(/[\w-']+|[^\w]+/g)
-    if (!!splitPhrase) {
-        var martianizedPhrase = splitPhrase.map(function(word) {
-          if (isNaN(word) && word.length > 3) {
-            if (word.charAt(0) === word.charAt(0).toUpperCase()) {
-              return "Boinga"
-            } else if (word === word.toUpperCase()) {
-              return "BOINGA"
-            } else {
-              return "boinga"
-            }
-          } else {
-            return word
-          }
-        })
-        return martianizedPhrase.join("")
-      }
-    }
-}

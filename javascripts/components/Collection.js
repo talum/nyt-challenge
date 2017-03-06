@@ -3,6 +3,8 @@ function Collection(collection, state) {
   this.state = state
 }
 
+Collection.prototype = Object.create(NYTD.prototype)
+
 Collection.prototype.shouldShow = function() {
   return (this.collection.assets.length > 0)
 }

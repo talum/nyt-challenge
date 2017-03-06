@@ -3,6 +3,8 @@ function Section(section, state) {
   this.state = state
 }
 
+Section.prototype = Object.create(NYTD.prototype)
+
 Section.prototype.shouldShow = function() {
   return (this.section.name != "SpanABTop" && this.section.name !="cColumn" && this.section.name != "LiveMobileResults")
 }
