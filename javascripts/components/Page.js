@@ -5,7 +5,7 @@ function Page(data, state) {
   this.shouldMartianize = this.state.shouldMartianize
 }
 
-// Explicitly prototype-linking to NYTD in order to port over the martinize
+// Explicitly prototype-linking to NYTD in order to port over the martianize
 // function
 Page.prototype = Object.create(NYTD.prototype)
 

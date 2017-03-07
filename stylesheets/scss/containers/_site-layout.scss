@@ -2,6 +2,13 @@
   padding: $site-padding;
 }
 
+@media(min-width: $breakpoint-large + 1) {
+  .site-layout {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+}
+
 @media(max-width: $breakpoint-large) {
   .site-layout {
     padding: $site-padding-s;

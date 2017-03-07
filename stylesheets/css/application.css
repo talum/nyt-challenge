@@ -81,6 +81,10 @@ p {
 .site-layout {
   padding: 96px; }
 
+@media (min-width: 961px) {
+  .site-layout {
+    margin: 0 auto;
+    max-width: 1280px; } }
 @media (max-width: 960px) {
   .site-layout {
     padding: 64px; } }
