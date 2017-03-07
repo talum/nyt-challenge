@@ -41,6 +41,13 @@ function testPunctuation() {
   appendResult(description, expectation)
 }
 
+function testSpecialApostrophes() {
+  var description = "it handles the other type of apostrophe"
+  var test = "Long Ago, a Pilot Landed on an Uptown Street. That’s Where the Bar Was."
+  var expectation = NYTD.prototype.martianize(test) === "Boinga Ago, a Boinga Boinga on an Boinga Boinga. Boinga Boinga the Bar Was."
+  appendResult(description, expectation)  
+}
+
 function testNumbers() {
   var description = "it handles numbers"
   var test = "Harry Potter, 27"
@@ -60,5 +67,6 @@ testApostrophes()
 testAllCaps()
 testSomeCaps()
 testPunctuation()
+testSpecialApostrophes()
 testNumbers()
 testUndefined()
