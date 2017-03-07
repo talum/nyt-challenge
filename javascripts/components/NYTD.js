@@ -36,10 +36,10 @@ NYTD.prototype.martianize = function(phrase) {
     if (!!splitPhrase) {
         var martianizedPhrase = splitPhrase.map(function(word) {
           if (isNaN(word) && word.length > 3) {
-            if (word.charAt(0) === word.charAt(0).toUpperCase()) {
-              return "Boinga"
-            } else if (word === word.toUpperCase()) {
+            if (word === word.toUpperCase()) {
               return "BOINGA"
+            } else if (word.charAt(0) === word.charAt(0).toUpperCase()) {
+              return "Boinga"
             } else {
               return "boinga"
             }
